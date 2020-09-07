@@ -1,3 +1,5 @@
+package exemple.debogage;
+
 
 import plum.console.Clavier;
 
