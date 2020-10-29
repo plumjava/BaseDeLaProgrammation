@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package bloc1.java.devoir.switchif02;
+package bloc1.devoir.switchif02;
 
 import plum.console.Clavier;
 
