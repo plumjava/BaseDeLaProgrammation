@@ -1,4 +1,4 @@
-package exemple.debogage;
+package bloc1.java5.debogage;
 
 
 import plum.console.Clavier;
