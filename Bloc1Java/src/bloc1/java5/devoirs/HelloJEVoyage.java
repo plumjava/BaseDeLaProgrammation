@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package bloc2.b1sio2.devoir;
+package bloc1.java5.devoirs;
 
 /**
  *
@@ -13,7 +8,8 @@ public class HelloJEVoyage {
 
     public static void main(String[] args) {
         // B/ tests de la fonction
-        String tVilleVoyage[] = {"Limoges", "Bellac", "Chateauroux", "Tours", "Toulouse", "Amiens", "Paris"};
+        String tVilleVoyage[] = {"Limoges", "Bellac", "Chateauroux", "Tours", 
+            "Toulouse", "Amiens", "Paris"};
 
         int i = rechercheVille(tVilleVoyage, "Amiens");
         System.out.println(i); // i vaut 5

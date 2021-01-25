@@ -1,9 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package bloc2.b1sio2.devoir;
+package bloc1.java5.devoirs;
 
 /**
  *
