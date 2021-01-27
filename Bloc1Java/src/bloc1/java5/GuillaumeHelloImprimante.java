@@ -9,6 +9,6 @@ package bloc1.java5;
  *
  * @author bogusz.thierry
  */
-public class HelloImprimante {
+public class GuillaumeHelloImprimante {
     
 }
