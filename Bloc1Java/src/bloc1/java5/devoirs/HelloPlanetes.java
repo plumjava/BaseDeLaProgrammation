@@ -1,17 +1,6 @@
 package bloc1.java5.devoirs;
 
-/**
- *
- * @author bogusz.thierry
- */
 public class HelloPlanetes {
-
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
-        // TODO code application logic here
-    }
 
     public static int distance(String laPlanete,
             String tPlanete[],
@@ -41,18 +30,19 @@ public class HelloPlanetes {
             String tPlanete[],
             int tDistance[]) {
 
-        int dmin = Integer.MAX_VALUE;
+        int dmin = -1;
         int imin = -1;
 
         for (int i = 0; i < tPlanete.length; i++) {
+            
             int d = distanceEntreDeuxPlanete(laPlanete,
                     tPlanete[i],
                     tPlanete,
                     tDistance);
 
-            if (d > 0 & d < dmin) { 
-                    dmin = d;
-                    imin = i;   
+            if (d > 0 & (d < dmin | dmin == -1) ) {
+                dmin = d;
+                imin = i;
             }
         }
         return tPlanete[imin];
