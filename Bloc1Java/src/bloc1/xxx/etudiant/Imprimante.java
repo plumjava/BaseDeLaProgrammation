@@ -1,16 +1,9 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
-package bloc1.java5;
-
+package imprimante.java;
 /**
  *
- * @author pasca
+ * @author pauls
  */
-class GuillaumeImprimante {
- 
+public class Imprimante {
   /**
    * Retourne le nombre d’imprimantes libres.
    *
@@ -23,10 +16,8 @@ class GuillaumeImprimante {
     for(int i = 0; i < tLibre.length; i++){
       if ( tLibre[i] == true ) c++;
     }
- 
     return c;
   }
- 
   /**
    * Retourne l'indice 
    * de la première imprimante disponible. 
@@ -35,21 +26,16 @@ class GuillaumeImprimante {
    *
    * @return L'indice de la première imprimante libre, sinon -1
    */
-  static int impDisponible( boolean tLibre[] ){
-       int finder=-1;
-            int i=0;
-            while(finder==-1 & i<tLibre.length){
-                 if ( tLibre[i] == true ) {
-                    finder=i;
-                }else{
-                    i++;
-                    
-                }
-            }
-            return finder;
-        }
-  
- 
+  static int impDisponible(boolean tLibre[]){
+      int i = 0;
+      while(tLibre[i]!= true && i < tLibre.length){
+     i++;}
+      if(i<tLibre.length){
+     return i+1;
+      }else{
+          return -1;
+      }
+  }
   /**
    * Retourne le nombre d’imprimantes proches d’une autre imprimante 
    *  ce sont les imprimantes  dont la partie "zz" de l’host-Id est identique.
@@ -60,26 +46,19 @@ class GuillaumeImprimante {
    * @return Le nombre d'imprimante proche de adIP
    */
   static int dénombreProche( String tImp[], String adIP ){
-      
+   int c=0;
+   for(int i = 0; i<tImp.length; i++){
         String sT[] = adIP.split("\\.");
-        int i;
-        int imp=0;
-        for(i=0;i<tImp.length;i++){
-            String sTT[] = tImp[i].split("\\.");
-            if (sT[2].equals(sTT[2])) imp++;
-                    
-        }
-      return imp;
-      }
-      
- 
+        String sT1[] = tImp[i].split("\\.");
         //affichage : [192, 243, zz, 45]
-   
-  
- 
- 
+        if (sT[2].equals(sT1[2])){
+        c++;
+     }
+   }
+     return c;
+ }
   /**
-   *Retourne l'indice de adImp dans tImp
+   * Retourne l'indice de adImp dans tImp
    *
    * @param tImp Tableau contenant les adresses IP des imprimantes
    * @param adIP Adresse IP de référence
@@ -87,9 +66,21 @@ class GuillaumeImprimante {
    * @return L'indice de adIP, sinon -1
    */
   static int rechIp( String tImp[], String adIP ){
-     return -1;
+      boolean bool = false;
+      int i = 0;
+     while(!bool && i < tImp.length){
+     if(tImp[i].equals(adIP)){
+         bool = true;
+     }else{
+         i++;
+     }
+             }
+     if(i>=tImp.length){
+         return -1;
+     }else{
+     return i;
+     }
   }
- 
   /**
    * L'imprimante correspondant à adIP est marquée comme occupée (libre = false).
    *
@@ -99,10 +90,21 @@ class GuillaumeImprimante {
    *
    */
   static void réserverImp( String tImp[], boolean tLibre[], String adIP ){
- 
-  }
- 
- 
+      int i = 0;
+      while(i<tLibre.length){
+          if(tImp[i].equals(adIP)){
+              System.out.println("Imprimante trouvée : "+adIP);
+              if(tLibre[i] == false){
+                  System.out.println("L'imprimante est occupée.");
+      }
+              else{
+                  System.out.println("L'imprimante est libre.");
+                  tLibre[i]=false;
+                  System.out.println("Imprimante réservée vous pouvez l'utiliser dès maintenant.");
+          }
+        }
+          i++;}      
+}
   /**
    * L'imprimante correspondant à adIP est marquée comme libre (libre = true).
    *
@@ -112,7 +114,20 @@ class GuillaumeImprimante {
    *
    */
   static void libérerImp( String tImp[], boolean tLibre[], String adIP ){
- 
+      int i = 0;
+      while(i<tLibre.length){
+          if(tImp[i].equals(adIP)){
+          System.out.println("Imprimante trouvée : "+adIP);
+          if(tLibre[i] == true){
+              System.out.println("L'imprimante est libre.");
+          }
+          else{
+              System.out.println("L'imprimante est occupée.");
+              tLibre[i]=true;
+              System.out.println("Imprimante libérée sous quelques instants veuillez patienter...");
+          }
+      }
+          i++;
   }
- 
+ }
 }

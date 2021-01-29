@@ -1,29 +1,27 @@
-package Cargo;
-public class NoahCargo {
-    
- 
- /**
- *
- * Rechercher cargo dans le tableau tCargo
- *
- * @param tCargo Tableau mémorisant la liste des cargos
- * @param cargo  Nom du cargo à rechercher
- *
- * @return
- *    l'indice du cargo dans tCargo
- *    -1 si le cargo n'existe pas dans tCargo
- *
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
  */
+package bloc1.xxx.etudiant;
+
+import java.util.Arrays;
+
+/**
+ *
+ * @author Nathanael
+ */
+public class NathanaelCargo {
+ 
  public static int rechercher(String tCargo[],String cargo){
-     int finder = -1;
-     for (int i = 0; i < tCargo.length; i++){
-         if(tCargo[i] ==  cargo){
-             finder = i;
-             break;
+     int e = -1;
+     int d = 0;
+     for (int i = 0; i < tCargo.length; i++) {
+         if(cargo.equals(tCargo[i])){
+             d=e;
          }
-             
      }
-     return finder;
+     return e;
  }
  
  /**
@@ -37,17 +35,15 @@ public class NoahCargo {
  *    Le nombre de cargo se trouvant à moins de d milles du Havre
  *
  */
- public static int nbDistance(int tDistance[],int d) {
-     int compteur = 0;
-     for (int i = 0; i < tDistance.length; i++){
-         if (tDistance[i] < d){
-             compteur++;
-         
+ public static int nbDistance(int tDistance[],int d){
+     int nb = 0;
+     for (int i = 0; i < tDistance.length; i++) {
+         if(tDistance[i] < d){
+             nb++;
+         }
      }
-     
- }      
-     return compteur;
- }
+     return nb;
+ }     
  
 /**
  *
@@ -61,10 +57,9 @@ public class NoahCargo {
  */
  public static void modifDistance(String tCargo[], int tDistance[],
                             String cargo, int newDistance) {
-    int position = rechercher(tCargo,cargo);
-    tDistance[position] = newDistance;
-    
- }  
+     int c = rechercher(tCargo, cargo);
+     tDistance[c] = newDistance;
+ }
  
 /**
  *
@@ -80,10 +75,18 @@ public class NoahCargo {
  *    retourne le nombre d'heures nécessaires au retour d'un cargo
  */
  public static int nbHeureRetour(String tCargo[],int tDistance[], String cargo){
-     int position = rechercher(tCargo, cargo);
+         int nbh = 0;
+    int distance = 0;
+    int c  = rechercher(tCargo, cargo);
+    for (int i = 0; i < tCargo.length; i++) {
+        for (int j = 0; j < tDistance.length; j++) {
+            if(){
+             tDistance[j] = distance;
+            }   
+        }
+    }
+    nbh = distance/25;
      
-     
-     
-     return (tDistance[position]/25);
+     return nbh;
  } 
 }
